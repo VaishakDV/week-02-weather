@@ -28,8 +28,11 @@ def main():
     weather_service = WeatherService()
     news_service = NewsService()
 
-    weather = weather_service.get_weather("Bengaluru")
-    headlines = news_service.get_headlines()
+    city = input("Enter city: ").strip()
+    topic = input("Enter news topic:").strip()
+
+    weather = weather_service.get_weather(city)
+    headlines = news_service.get_headlines(topic)
 
     display_briefing(weather, headlines)
 
